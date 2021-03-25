@@ -18,7 +18,7 @@ services:
             SMTP_PORT: $$cap_ghost_smtp_port
             SMTP_SERVICE: $$cap_ghost_smtp_service
             SMTP_USER: $$cap_ghost_smtp_user
-        image: bitnami/ghost:$$cap_ghost_version
+        image: ghost:$$cap_ghost_version
         restart: always
         volumes:
             - $$cap_appname-data:/bitnami
@@ -39,7 +39,7 @@ services:
             notExposeAsWebApp: 'true'
 caproverOneClickApp:
     variables:
-        - defaultValue: 2.16.4
+        - defaultValue: 4.1.2
           description: Check out their Docker page for the valid tags https://hub.docker.com/r/bitnami/ghost/tags
           id: $$cap_ghost_version
           label: Ghost Version
